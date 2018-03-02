@@ -19,7 +19,10 @@
 //    return view('welcome');   这是默认的路由
 //});
 
-//get表示该路由将会影响GET请求
-Route::get('/', 'StaticPagesController@home');  //当访问http://sample.test/时，会自动调用\app\Http\Controller\StaticPagesController控制器里的home方法
-Route::get('/help', 'StaticPagesController@help');//当访问http://sample.test/help时，会自动调用\app\Http\Controller\StaticPagesController控制器里的help方法
-Route::get('/about', 'StaticPagesController@about');
+//get表示该路由将会影响GET请求 name()为路由命名
+Route::get('/', 'StaticPagesController@home')->name('home');  //当访问http://sample.test/时，会自动调用\app\Http\Controller\StaticPagesController控制器里的home方法
+Route::get('/help', 'StaticPagesController@help')->name('help');//当访问http://sample.test/help时，会自动调用\app\Http\Controller\StaticPagesController控制器里的help方法
+Route::get('/about', 'StaticPagesController@about')->name('about');
+Route::get('/aaa', 'StaticPagesController@about')->name('aaa');  //此时访问http://sample.test/aaa时也能访问到about，在视图中{{ route('aaa') }}也行
+
+Route::get('signup', 'UsersController@create')->name('signup');
