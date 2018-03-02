@@ -1,5 +1,7 @@
 <?php
-
+/***begin by xiong*/
+/*这是默认的迁移文件，用于构建密码重置表
+/*******end********/
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
