@@ -26,3 +26,13 @@ Route::get('/about', 'StaticPagesController@about')->name('about');
 Route::get('/aaa', 'StaticPagesController@about')->name('aaa');  //此时访问http://sample.test/aaa时也能访问到about，在视图中{{ route('aaa') }}也行
 
 Route::get('signup', 'UsersController@create')->name('signup');
+Route::resource('users','UsersController'); //resource()接收两个参数，第一个参数为资源名称，第二个参数为控制器名称。
+/*以上resource()相当于：
+ * Route::get('/users', 'UsersController@index')->name('users.index');
+Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+Route::get('/users/create', 'UsersController@create')->name('users.create');
+Route::post('/users', 'UsersController@store')->name('users.store');
+Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
+Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');
+ */

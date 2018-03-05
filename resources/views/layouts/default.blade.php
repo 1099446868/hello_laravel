@@ -12,6 +12,7 @@
 <!--include是blade提供的视图引入方法-->
 
 <div class="container">
+    @include('shared._message')
     @yield('content')
     <!--上面表示该占位区域用于显示content区块的内容，而content区块的内容由继承default视图的子视图定义-->
     @include('layouts._footer')
