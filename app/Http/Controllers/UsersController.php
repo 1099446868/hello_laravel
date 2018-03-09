@@ -43,6 +43,9 @@ class UsersController extends Controller
             'email' =>$request->email,
             'password' => bcrypt($request->password)
         ]);
+
+        Auth::login($user); //在 Laravel 中，如果要让一个已认证通过的用户实例进行登录,可实现注册后自动登录
+
         //$data = $request->all();获取用户的所有信息
         session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');   //flash()方法让这个session会话只在下一次的请求内有效
         return redirect()->route('users.show', [$user]);

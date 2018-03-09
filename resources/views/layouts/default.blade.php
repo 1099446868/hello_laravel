@@ -5,6 +5,7 @@
     <!--yield（）也可以接受两个参数，第一个是占位参数，第二个是默认值，表示当指定变量的值为空时使用默认值.
     也可以在 yield 区块后面进行内容拼接。让我们标题拥有更加丰富的信息。-->
     <link rel="stylesheet" href="/css/app.css">
+    <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
 
